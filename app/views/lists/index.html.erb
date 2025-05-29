@@ -1,0 +1,14 @@
+<div class="p-3 text-decoration-none">
+<h1>Lists</h1>
+<div class="mt-4 border-bottom border-secondary-subtle border-2 mb-4 text-decoration-none">
+<ul class="list-inline">
+  <% @lists.each do |list| %>
+     <li class="mb-5">
+     <h2><%= list.name %></h2>
+     <%= link_to "See this list", list_path(list) %>
+
+     </li>
+  <% end %>
+
+  <%= link_to "Create a list", new_list_path %> |
+  <%= link_to "See all movies", movies_path %>

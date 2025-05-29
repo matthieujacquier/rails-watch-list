@@ -1,0 +1,22 @@
+<div class="p-3 text-decoration-none">
+<h1 class="mb-3"><%= @list.name %></h1>
+<div class="mt-4 border-bottom border-secondary-subtle border-2 mb-4 text-decoration-none">
+<ul class="list-inline">
+  <% @bookmarks.each do |bookmark| %>
+     <li class="mb-5">
+     <h2><%= bookmark.movie.title %></h2>
+     <p><%= bookmark.movie.overview %></p>
+     <img src="<%= bookmark.movie.poster_url %>" alt="image not found" class="img-thumbnail img-fluid" width=200 >
+     <p><%= bookmark.comment %></p>
+     <h5><%= bookmark.movie.rating %> ⭐️</h5>
+     <%= link_to "Delete", list_bookmark_path(@list, bookmark), data: { turbo_method: :delete, turbo_confirm: "Are you sure" } %>
+     </li>
+  <% end %>
+</ul>
+</div>
+</div>
+
+
+<div>
+    <%= link_to "Create a bookmark", new_list_bookmark_path(@list) %>
+</div>
