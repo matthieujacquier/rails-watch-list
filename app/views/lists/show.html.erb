@@ -1,5 +1,11 @@
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= cl_image_path @list.photo.key %>');">
+  <div class="container">
+    <h1><%= @list.name %></h1>
+    <p>Watch some great movies.</p>
+  </div>
+</div>
+
 <div class="p-3 text-decoration-none">
-<h1 class="mb-3"><%= @list.name %></h1>
 <div class="mt-4 border-bottom border-secondary-subtle border-2 mb-4 text-decoration-none">
 <ul class="list-inline">
   <% @bookmarks.each do |bookmark| %>
